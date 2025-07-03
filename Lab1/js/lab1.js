@@ -39,5 +39,6 @@ Bổ sung ghi chú vào 2 phần của mã nguồn
 let x = prompt("Input x:");
 
 
-document.getElementById("des").innerHTML = "Hello"
+document.getElementById("des").innerHTML = x
 
+console.log("Hello word!");

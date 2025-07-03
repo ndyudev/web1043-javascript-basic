@@ -3,14 +3,14 @@ Dùng prompt() nhập từ bàn phím 2 giá trị a,b
 Áp dụng định lý Pythagorean a2+b2=c2
 */
 
-// alert("Tam giác bằng định lý Pythagorean.")
+alert("Tam giác bằng định lý Pythagorean.")
 
-// let a = prompt("Nhập giá trị của a");
-// let b = prompt("Nhập giá trị của b")
+let a = prompt("Nhập giá trị của a");
+let b = prompt("Nhập giá trị của b")
 
-// let c = Math.sqrt(a*a + b*b); // sprt căn bình phương
+let c = Math.sqrt(a*a + b*b); // sprt căn bình phương
 
-// document.getElementById("result").innerHTML = c
+document.getElementById("result").innerHTML = c
 
 /* 
 Bài 2 (2 điểm): Đổi đơn vị đất đai 
@@ -19,13 +19,13 @@ Tạo biến chứa giá trị mà mét vuông, chuyển đổi giá trị đó 
 Ví dụ: 3600m2 đất là 10 sào = 1 mẫu (Nam Bộ) = 1ha
 */
 
-// let dat = prompt("Nhap dien tich m:");
+let dat = prompt("Nhap dien tich m:");
 
-// let sao = dat /360;
-// let ha = sao / 10;
+let sao = dat /360;
+let ha = sao / 10;
 
-// document.getElementById("sao").innerHTML = sao
-// document.getElementById("ha").innerHTML = ha
+document.getElementById("sao").innerHTML = sao
+document.getElementById("ha").innerHTML = ha
 
 /* 
 
@@ -35,22 +35,22 @@ Dưới 18.5 là thiếu cân
 18.5 đến 24.99 là bình thường 
 25 đến 29.99 là thừa câ */
 
-// alert("Tính chỉ số BMI (kg/m²)");
+alert("Tính chỉ số BMI (kg/m²)");
 
-// let kg = parseFloat(prompt("Nhập trọng lượng cơ thể (kg):"));
-// let height = parseFloat(prompt("Nhập chiều cao của bạn (m):")) / 100;
+let kg = parseFloat(prompt("Nhập trọng lượng cơ thể (kg):"));
+let height = parseFloat(prompt("Nhập chiều cao của bạn (m):")) / 100;
 
-// let bmi = kg / (height * height);
+let bmi = kg / (height * height);
 
-// if (bmi < 18.5) {
-//     alert("Thiếu cân");
-// } else if (bmi <= 24.99) {
-//     alert("Bình thường");
-// } else if (bmi <= 29.99) {
-//     alert("Thừa cân");
-// } else {
-//     alert("Béo phì");
-// }
+if (bmi < 18.5) {
+    alert("Thiếu cân");
+} else if (bmi <= 24.99) {
+    alert("Bình thường");
+} else if (bmi <= 29.99) {
+    alert("Thừa cân");
+} else {
+    alert("Béo phì");
+}
 
 /* 
 Bài 4 (2 điểm): 
@@ -101,11 +101,11 @@ else{
 }
 */
 var x = 10 + Math.round(5 * Math.random());
-var a = prompt("Số nhập vào");
+var y = prompt("Số nhập vào");
 
-if(a == x){
+if(y == x){
     alert("Chúc mừng, bạn đã đoán đúng");
-} else if (a > x){
+} else if (y > x){
     alert("Giá trị của bạn lớn hơn số bí mật");
 } else {
     alert("Giá trị của bạn nhỏ hơn số bí mật");
