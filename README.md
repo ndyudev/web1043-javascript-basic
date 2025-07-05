@@ -40,14 +40,14 @@ Mỗi lab sẽ có một bài học mới với các kỹ năng và dự án th�
 |-----|------------|---------|-------|
 | **Lab 1** | ✅ **Hoàn thành** | JavaScript Basics | Console.log, Variables, Alert, Prompt |
 | **Lab 2** | ✅ **Hoàn thành** | Math & Arrays | Pythagorean, Unit conversion, BMI, Array manipulation, Number guessing game |
-| **Lab 3** | ⏳ **Chưa bắt đầu** | Event Handling | Click, input, form events |
+| **Lab 3** | ✅ **Hoàn thành** | Event Handling & Games | Calculator, Rock Paper Scissors |
 | **Lab 4** | ⏳ **Chưa bắt đầu** | Functions & Arrays | Function creation, array methods |
 | **Lab 5** | ⏳ **Chưa bắt đầu** | Objects & JSON | Object creation, JSON parsing |
 | **Lab 6** | ⏳ **Chưa bắt đầu** | Local Storage | Data persistence |
 | **Lab 7** | ⏳ **Chưa bắt đầu** | API Integration | Fetch API, async/await |
 | **Lab 8** | ⏳ **Chưa bắt đầu** | Project Tổng hợp | Web application |
 
-**Tổng tiến độ: 2/8 (25%)**
+**Tổng tiến độ: 3/8 (37.5%)**
 
 </div>
 
@@ -140,14 +140,13 @@ web1043-javascript-basic/
 | **Bài 4** | ✅ **Hoàn thành** | Thao tác với mảng (unshift, pop, splice, push) |
 | **Bài 5** | ✅ **Hoàn thành** | Game đoán số bí mật (10-15) |
 
-### 🗓️ Lab 3: Event Handling ⏳
+### 🗓️ Lab 3: Event Handling & Games ✅
 | Bài tập | Trạng thái | Mô tả |
 |---------|------------|-------|
-| **Bài 1** | ⏳ **Chưa bắt đầu** | Click events |
-| **Bài 2** | ⏳ **Chưa bắt đầu** | Input events |
-| **Bài 3** | ⏳ **Chưa bắt đầu** | Form submission events |
-| **Bài 4** | ⏳ **Chưa bắt đầu** | Keyboard events |
-| **Bài 5** | ⏳ **Chưa bắt đầu** | Mouse events |
+| **Bài 1** | ✅ **Hoàn thành** | Máy tính phép tính cơ bản (prompt, switch-case) |
+| **Bài 2** | ✅ **Hoàn thành** | In bảng cửu chương (for, template string, DOM) |
+| **Bài 3** | ✅ **Hoàn thành** | Máy tính số học giao diện nút bấm (Calculator UI) |
+| **Bài 4** | ✅ **Hoàn thành** | Rock Paper Scissors (Kéo Búa Bao) |
 
 ### 🗓️ Lab 4-8: Nâng cao ⏳
 | Lab | Project | Trạng thái | Mô tả |
@@ -281,6 +280,26 @@ if(a == x){
 - ✅ Sử dụng `parseFloat()` để chuyển đổi kiểu dữ liệu
 - ✅ Tạo số ngẫu nhiên với `Math.random()`
 - ✅ DOM manipulation với `getElementById()`
+
+---
+
+### ✅ Lab 3: Event Handling & Games
+- **Bài 1:**
+  - **File:** `Lab3/lab3-1.html`, `Lab3/js/lab3-1.js`, `Lab3/assets/lab3-1.css`
+  - **Chức năng:** Nhập 2 số và phép toán (+, -, *, /) qua prompt, thực hiện phép tính bằng switch-case, hiển thị kết quả lên trang.
+  - **Kỹ năng:** prompt, switch-case, DOM, kiểm tra điều kiện.
+- **Bài 2:**
+  - **File:** `Lab3/lab3-2.html`, `Lab3/js/lab3-2.js`, `Lab3/assets/lab3-2.css`
+  - **Chức năng:** Nhập số, in bảng cửu chương từ 1 đến 10, sử dụng for, template string, DOM, in ra console thông tin biến và kiểu dữ liệu.
+  - **Kỹ năng:** for, template string, DOM, console.log.
+- **Bài 3:**
+  - **File:** `Lab3/lab3-3.html`, `Lab3/js/lab3-3.js`, `Lab3/assets/lab3-3.css`
+  - **Chức năng:** Máy tính số học với giao diện nút bấm, nhập số, chọn toán tử, nhấn = để tính, xử lý nhập nhiều chữ số, báo lỗi chia cho 0.
+  - **Kỹ năng:** DOM nâng cao, sự kiện click, quản lý trạng thái.
+- **Bài 4:**
+  - **File:** `Lab3/lab3-4.html`, `Lab3/js/lab3-4.js`, `Lab3/assets/lab3-4.css`
+  - **Chức năng:** Trò chơi kéo búa bao giữa người và máy, máy chọn ngẫu nhiên, so sánh kết quả, hiển thị thắng/thua/hòa.
+  - **Kỹ năng:** mảng, Math.random, switch-case, DOM, sự kiện click.
 
 ---
 

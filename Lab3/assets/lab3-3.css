@@ -1,0 +1,38 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body { font-family: serif; }
+.container { display: flex; flex-direction: column; align-items: center; }
+h1 { margin-top: 24px; font-size: 2.5rem; font-weight: bold; letter-spacing: 2px; }
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(4, 60px);
+    gap: 8px;
+    margin-top: 16px;
+}
+.calc-btn {
+    font-size: 1.3rem;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background: linear-gradient(#eee, #ccc);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.calc-btn:active {
+    background: #ddd;
+}
+#display {
+    width: 244px;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-align: right;
+    padding: 6px 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background: #fafafa;
+}
