@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 3 | Bai Tap</title>
+    <style>
+      .container {
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        display: flex;
+      }
+
+      .fillToTable {
+        border: none;
+        outline: none;
+        background-color: aqua;
+        color: antiquewhite;
+        padding: 50px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btnFill" onclick="fillToTable()">Fill To Table</button>
+    </div>
+
+    <script>
+      let names = ["Duy", "Tiên", "Thư", "Nhi"];
+
+      function fillToTable() {
+        for (let i = 0; i < names.length; i++) {
+          console.log(names[i]);
+        }
+      }
+    </script>
+  </body>
+</html>
