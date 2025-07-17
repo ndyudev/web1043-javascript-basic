@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 3 | Bài Tập</title>
+</head>
+<body>
+  <script>
+    let month = parseInt(prompt("Nhập tháng:"));
+    let year = parseInt(prompt("Nhập năm:"));
+    let songay;
+
+    switch(month) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        songay = 31;
+        break;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        songay = 30;
+        break;
+      case 2:
+        if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+          songay = 29; // Năm nhuận
+        } else {
+          songay = 28; // Không nhuận
+        }
+        break;
+      default:
+        alert("Tháng không hợp lệ!");
+        songay = null;
+    }
+
+    if (songay !== null) {
+      alert(`Tháng ${month} năm ${year} có ${songay} ngày.`);
+    }
+  </script>
+</body>
+</html>
