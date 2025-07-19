@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MÁY TÍNH</title>
-    <link rel="stylesheet" href="assets/lab3-3.css">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 3 | Calculator</title>
+    <link rel="stylesheet" href="./assets/lab3-3.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>MÁY TÍNH</h1>
-        <input id="display" type="text" readonly value="" />
-        <div class="calc-grid">
-            <button class="calc-btn" onclick="toan_hang(7)">7</button>
-            <button class="calc-btn" onclick="toan_hang(8)">8</button>
-            <button class="calc-btn" onclick="toan_hang(9)">9</button>
-            <button class="calc-btn" onclick="toan_tu('+')">+</button>
-            <button class="calc-btn" onclick="toan_hang(4)">4</button>
-            <button class="calc-btn" onclick="toan_hang(5)">5</button>
-            <button class="calc-btn" onclick="toan_hang(6)">6</button>
-            <button class="calc-btn" onclick="toan_tu('-')">-</button>
-            <button class="calc-btn" onclick="toan_hang(1)">1</button>
-            <button class="calc-btn" onclick="toan_hang(2)">2</button>
-            <button class="calc-btn" onclick="toan_hang(3)">3</button>
-            <button class="calc-btn" onclick="toan_tu('x')">x</button>
-            <button class="calc-btn" onclick="toan_hang(0)">0</button>
-            <button class="calc-btn" onclick="lam_lai()">C</button>
-            <button class="calc-btn" onclick="thuc_hien()">=</button>
-            <button class="calc-btn" onclick="toan_tu(':')">:</button>
-        </div>
+      <h2>My Calculator</h2>
+      <div class="calculator">
+        <div class="display" id="display">0</div>
+
+        <!-- Số -->
+        <button onclick="toan_hang('7')">7</button>
+        <button onclick="toan_hang('8')">8</button>
+        <button onclick="toan_hang('9')">9</button>
+        <button onclick="lam_lai()">C</button>
+
+        <button onclick="toan_hang('4')">4</button>
+        <button onclick="toan_hang('5')">5</button>
+        <button onclick="toan_hang('6')">6</button>
+        <button onclick="toan_tu('+')">+</button>
+
+        <button onclick="toan_hang('1')">1</button>
+        <button onclick="toan_hang('2')">2</button>
+        <button onclick="toan_hang('3')">3</button>
+        <button onclick="toan_tu('-')">-</button>
+
+        <button onclick="toan_hang('0')">0</button>
+        <button onclick="toan_tu(':')">:</button>
+        <button onclick="thuc_hien()">=</button>
+        <button onclick="toan_tu('*')">x</button>
+      </div>
     </div>
-    <script src="js/lab3-3.js"></script>
-</body>
+  </body>
+  <script src="./js/lab3-3.js"></script>
 </html>

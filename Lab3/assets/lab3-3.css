@@ -1,38 +1,57 @@
 /* Reset CSS */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body { font-family: serif; }
-.container { display: flex; flex-direction: column; align-items: center; }
-h1 { margin-top: 24px; font-size: 2.5rem; font-weight: bold; letter-spacing: 2px; }
-.calc-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 60px);
-    grid-template-rows: repeat(4, 60px);
-    gap: 8px;
-    margin-top: 16px;
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #f9f9f9, #ececec);
 }
-.calc-btn {
-    font-size: 1.3rem;
-    border: 1px solid #bbb;
-    border-radius: 6px;
-    background: linear-gradient(#eee, #ccc);
-    cursor: pointer;
-    transition: background 0.2s;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
-.calc-btn:active {
-    background: #ddd;
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-#display {
-    width: 244px;
-    height: 40px;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    text-align: right;
-    padding: 6px 10px;
-    border: 1px solid #bbb;
-    border-radius: 6px;
-    background: #fafafa;
+
+.calculator button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to bottom right, #f0f0f0, #dcdcdc);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calculator button:hover {
+  background: linear-gradient(to bottom right, #d1d1d1, #c0c0c0);
+  transform: scale(1.05);
+}
+
+.display {
+  grid-column: span 4;
+  padding: 10px;
+  font-size: 22px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  text-align: right;
+  overflow: auto;
 }
