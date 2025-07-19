@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="./assets/lab3-4-2.css" />
+  </head>
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <p>Chọn một trong các lựa chọn:</p>
+
+    <img src="./assets/images/bua.jpg" alt="Rock" onclick="getValue(0);" />
+    <img src="./assets/images/bao.png" alt="Paper" onclick="getValue(1);" />
+    <img src="./assets/images/keo.png" alt="Scissors" onclick="getValue(2);" />
+
+    <div class="chon">
+      <div class="col2">
+        <h2>Người</h2>
+        <span id="nguoi">bạn chọn</span>
+      </div>
+      <div class="col2">
+        <h2>Máy</h2>
+        <span id="may">máy chọn</span>
+      </div>
+    </div>
+
+    <div id="result"></div>
+  </body>
+  <script src="./js/lab3-4-2.js"></script>
+</html>

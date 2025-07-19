@@ -1,25 +1,28 @@
 let a = parseFloat(prompt("Nhập giá trị của a:"));
 let b = parseFloat(prompt("Nhập giá trị của b:"));
-let o = prompt("Nhập phép toán bạn muốn( + , - , * , /):")
+let o = prompt("Nhập phép toán bạn muốn (+, -, *, /):");
+let kq = 0;
 
-switch(o) {
-    case '+':
-        var kq = a + b
-        document.getElementById("result").innerHTML = kq
-    case '-':
-        if(a < b ){
-            alert("B phải lớn hơn A");
-        };
-        var kq = a - b
-        document.getElementById("result").innerHTML = kq    
-    case '*':
-        var kq = a * b
-        document.getElementById("result").innerHTML = kq
-    case '/':
-        var kq = a / b
-        document.getElementById("result").innerHTML = kq
+switch (o) {
+  case "+":
+    kq = a + b;
+    break;
+  case "-":
+    kq = a - b;
+    break;
+  case "*":
+    kq = a * b;
+    break;
+  case "/":
+    if (b === 0) {
+      alert("Không thể chia cho 0");
+      break;
+    }
+    kq = a / b;
+    break;
+  default:
+    alert("Phép toán không hợp lệ");
+    break;
 }
 
-console.log(typeof(a))
-
-
+document.getElementById("result").innerHTML = "Kết quả: " + kq;

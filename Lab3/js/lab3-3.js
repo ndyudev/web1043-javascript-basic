@@ -1,68 +1,82 @@
-var a = null, b = null, o = null;
-var nhap_b = false;
+// Khai báo toán hạng và toán tử
+let a = "";
+let b = "";
+let o = null;
 
-function updateDisplay(val) {
-    document.getElementById('display').value = val || '';
+// Hiển thị lên màn hình
+function cap_nhat_display(value) {
+  document.getElementById("display").innerText = value;
 }
 
+// Làm lại từ đầu
 function lam_lai() {
-    a = null;
-    b = null;
-    o = null;
-    nhap_b = false;
-    updateDisplay('');
+  a = "";
+  b = "";
+  o = null;
+  cap_nhat_display("0");
 }
 
+// Ghi nhận số được nhấn
 function toan_hang(x) {
-    if (!nhap_b) {
-        if (a === null) a = x;
-        else a = a * 10 + x;
-        updateDisplay(a);
-    } else {
-        if (b === null) b = x;
-        else b = b * 10 + x;
-        updateDisplay(a + ' ' + o + ' ' + b);
-    }
+  if (o === null) {
+    a += x;
+    cap_nhat_display(a);
+  } else {
+    b += x;
+    cap_nhat_display(a + " " + o + " " + b);
+  }
 }
 
+// Ghi nhận toán tử
 function toan_tu(x) {
-    if (a !== null) {
-        o = x;
-        nhap_b = true;
-        updateDisplay(a + ' ' + o);
-    }
+  if (a === "") {
+    alert("Bạn cần nhập số trước!");
+    return;
+  }
+  o = x;
+  cap_nhat_display(a + " " + o);
 }
 
+// Thực hiện phép tính
 function thuc_hien() {
-    if (a !== null && b !== null && o !== null) {
-        var c;
-        switch (o) {
-            case '+':
-                c = a + b;
-                break;
-            case '-':
-                c = a - b;
-                break;
-            case 'x':
-                c = a * b;
-                break;
-            case ':':
-                if (b === 0) {
-                    alert('Không thể chia cho 0!');
-                    lam_lai();
-                    return;
-                }
-                c = a / b;
-                break;
-            default:
-                alert(o + ' không phải toán tử');
-                lam_lai();
-                return;
-        }
-        updateDisplay(c);
-        setTimeout(lam_lai, 1200);
-    }
-}
+  if (a === "" || o === null || b === "") {
+    alert("Vui lòng nhập đầy đủ phép tính.");
+    return;
+  }
 
-// Khởi tạo lại khi load trang
-lam_lai();
+  const so1 = parseFloat(a);
+  const so2 = parseFloat(b);
+  let ketqua;
+
+  switch (o) {
+    case "+":
+      ketqua = so1 + so2;
+      break;
+    case "-":
+      ketqua = so1 - so2;
+      break;
+    case "x":
+    case "*":
+      ketqua = so1 * so2;
+      break;
+    case ":":
+    case "/":
+      if (so2 === 0) {
+        alert("Không thể chia cho 0.");
+        lam_lai();
+        return;
+      }
+      ketqua = so1 / so2;
+      break;
+    default:
+      alert("Toán tử không hợp lệ.");
+      lam_lai();
+      return;
+  }
+
+  cap_nhat_display(`${a} ${o} ${b} = ${ketqua}`);
+
+  setTimeout(() => {
+    lam_lai();
+  }, 5000);
+}
