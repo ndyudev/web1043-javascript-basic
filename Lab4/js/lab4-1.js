@@ -40,3 +40,5 @@ let product4 = {
   quantity: 99,
 };
 products.push(product4)
+
+console.log(products);
