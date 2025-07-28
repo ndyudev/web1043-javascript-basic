@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 5 | Cau 2</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        display: flex;
+      }
+      table {
+        border: 1px solid black;
+      }
+      tr {
+        border: 1px solid black;
+      }
+      td {
+        padding: 20px;
+      }
+
+      button {
+        padding: 20px;
+      }
+    </style>
+    <div class="container">
+      <h3>Danh mục hàng hóa</h3>
+      <table id="product">
+        <tr>
+          <td>Iphone X</td>
+          <td>$1965</td>
+          <td><button onclick="addProduct(this)">Add</button></td>
+        </tr>
+      </table>
+      <h3>Giỏ hàng của bạn</h3>
+      <table id="cart">
+
+      </table>
+      <h3>
+        TỔNG SỐ TIỀN: $
+        <span id="tong">0</span>
+      </h3>
+    </div>
+    <script src="./js/lab5-2.js"></script>
+  </body>
+</html>
