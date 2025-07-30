@@ -1,3 +1,4 @@
+// Homework at home
 function addProduct(button) {
   // Lấy hàng chứa nút Add
   const row = button.parentElement.parentElement;
