@@ -3,9 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Lab 5 | Cau 2 - Home</title>
-  </head>
-    <!-- Do homework at home -->
-  <body>
     <style>
       body {
         font-family: Arial, Helvetica, sans-serif;
@@ -13,39 +10,32 @@
         align-items: center;
         height: 100vh;
         display: flex;
+        flex-direction: column;
       }
-      table {
-        border: 1px solid black;
-      }
-      tr {
-        border: 1px solid black;
-      }
+      table,
+      tr,
       td {
-        padding: 20px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
       }
-
       button {
-        padding: 20px;
+        padding: 5px 15px;
       }
     </style>
+  </head>
+  <body>
     <div class="container">
       <h3>Danh mục hàng hóa</h3>
       <table id="product">
-        <tr>
-          <td>Iphone X</td>
-          <td>$1965</td>
-          <td><button onclick="addProduct(this)">Add</button></td>
-        </tr>
-      </table>
-      <h3>Giỏ hàng của bạn</h3>
-      <table id="cart">
 
       </table>
-      <h3>
-        TỔNG SỐ TIỀN: $
-        <span id="tong">0</span>
-      </h3>
+      <h3>Giỏ hàng của bạn</h3>
+      <table id="cart"></table>
+
+      <h3>TỔNG SỐ TIỀN: $<span id="tong">0</span></h3>
     </div>
-    <script src="./js/lab5-2.js"></script>
+
+    <script src="./js/lab5-cau22.js"></script>
   </body>
 </html>

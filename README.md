@@ -41,13 +41,13 @@ Mỗi lab sẽ có một bài học mới với các kỹ năng và dự án th�
 | **Lab 1** | ✅ **Hoàn thành** | JavaScript Basics | Console.log, Variables, Alert, Prompt |
 | **Lab 2** | ✅ **Hoàn thành** | Math & Arrays | Pythagorean, Unit conversion, BMI, Array manipulation, Number guessing game |
 | **Lab 3** | ✅ **Hoàn thành** | Event Handling & Games | Calculator, Rock Paper Scissors |
-| **Lab 4** | ⏳ **Chưa bắt đầu** | Functions & Arrays | Function creation, array methods |
-| **Lab 5** | ⏳ **Chưa bắt đầu** | Objects & JSON | Object creation, JSON parsing |
+| **Lab 4** | ✅ **Hoàn thành** | Objects & Functions | Product management, Student objects, Date/Time, Window manipulation |
+| **Lab 5** | ✅ **Hoàn thành** | DOM Manipulation & Shopping Cart | Product display, Shopping cart functionality |
 | **Lab 6** | ⏳ **Chưa bắt đầu** | Local Storage | Data persistence |
 | **Lab 7** | ⏳ **Chưa bắt đầu** | API Integration | Fetch API, async/await |
 | **Lab 8** | ⏳ **Chưa bắt đầu** | Project Tổng hợp | Web application |
 
-**Tổng tiến độ: 3/8 (37.5%)**
+**Tổng tiến độ: 5/8 (62.5%)**
 
 </div>
 
@@ -148,11 +148,24 @@ web1043-javascript-basic/
 | **Bài 3** | ✅ **Hoàn thành** | Máy tính số học giao diện nút bấm (Calculator UI) |
 | **Bài 4** | ✅ **Hoàn thành** | Rock Paper Scissors (Kéo Búa Bao) |
 
-### 🗓️ Lab 4-8: Nâng cao ⏳
+### 🗓️ Lab 4: Objects & Functions ✅
+| Bài tập | Trạng thái | Mô tả |
+|---------|------------|-------|
+| **Bài 1** | ✅ **Hoàn thành** | Product Objects & Arrays (Object creation, array methods) |
+| **Bài 2** | ✅ **Hoàn thành** | Student Object with Methods (Object methods, DOM manipulation) |
+| **Bài 3** | ✅ **Hoàn thành** | Date & Time Display (Date object, setInterval) |
+| **Bài 4** | ✅ **Hoàn thành** | Window Manipulation (window.open, window.close) |
+| **Bài 5** | ✅ **Hoàn thành** | Student Management System (Dynamic table creation) |
+
+### 🗓️ Lab 5: DOM Manipulation & Shopping Cart ✅
+| Bài tập | Trạng thái | Mô tả |
+|---------|------------|-------|
+| **Bài 1** | ✅ **Hoàn thành** | Product Display System (DOM traversal, event handling) |
+| **Bài 2** | ✅ **Hoàn thành** | Shopping Cart Application (Add/Remove products, total calculation) |
+
+### 🗓️ Lab 6-8: Nâng cao ⏳
 | Lab | Project | Trạng thái | Mô tả |
 |-----|---------|------------|-------|
-| **Lab 4** | ⏳ **Functions & Arrays** | Chưa bắt đầu | Function creation, array methods |
-| **Lab 5** | ⏳ **Objects & JSON** | Chưa bắt đầu | Object creation, JSON parsing |
 | **Lab 6** | ⏳ **Local Storage** | Chưa bắt đầu | Data persistence |
 | **Lab 7** | ⏳ **API Integration** | Chưa bắt đầu | Fetch API, async/await |
 | **Lab 8** | ⏳ **Project Tổng hợp** | Chưa bắt đầu | Web application |
@@ -175,27 +188,42 @@ let a = 10;
 console.log(a);
 alert(a);
 ```
+**Kiến thức mới:**
+- `let`: Khai báo biến có phạm vi block scope
+- `console.log()`: In ra console để debug
+- `alert()`: Hiển thị thông báo popup
 
 **Bài 2: Console.log với thông tin cá nhân**
 ```javascript
 console.log("Châu Nhật Duy");
 ```
+**Kiến thức mới:**
+- String literals: Chuỗi ký tự trong dấu ngoặc kép
 
 **Bài 3: Hello World**
 ```javascript
 console.log("Hello World");
 ```
+**Kiến thức mới:**
+- Console debugging: Cách debug cơ bản
 
 **Bài 4: Tạo file JavaScript riêng**
 - Tạo file `main.js` riêng biệt
 - Liên kết với HTML qua `<script>` tag
 - Sử dụng `alert()` và `console.log()`
+**Kiến thức mới:**
+- External JavaScript: Tách code JS ra file riêng
+- `<script>` tag: Liên kết file JS với HTML
 
 **Bài 5: Prompt và Document Write**
 ```javascript
 let x = prompt("Input x:");
 document.getElementById("des").innerHTML = "Hello";
 ```
+**Kiến thức mới:**
+- `prompt()`: Nhập dữ liệu từ người dùng
+- `document.getElementById()`: Truy cập element theo ID
+- `innerHTML`: Thay đổi nội dung HTML của element
 
 #### 🎯 Kỹ năng học được:
 - ✅ Khai báo biến với `let`, `var`
@@ -221,6 +249,10 @@ let b = prompt("Nhập giá trị của b");
 let c = Math.sqrt(a*a + b*b);
 document.getElementById("result").innerHTML = c;
 ```
+**Kiến thức mới:**
+- `Math.sqrt()`: Tính căn bậc hai
+- Toán tử `*`: Phép nhân
+- Toán tử `+`: Phép cộng
 
 **Bài 2: Đổi đơn vị đất đai**
 ```javascript
@@ -230,6 +262,9 @@ let ha = sao / 10;
 document.getElementById("sao").innerHTML = sao;
 document.getElementById("ha").innerHTML = ha;
 ```
+**Kiến thức mới:**
+- Toán tử `/`: Phép chia
+- Chuyển đổi đơn vị: Công thức tính toán
 
 **Bài 3: Tính chỉ số BMI**
 ```javascript
@@ -247,6 +282,10 @@ if (bmi < 18.5) {
     alert("Béo phì");
 }
 ```
+**Kiến thức mới:**
+- `parseFloat()`: Chuyển đổi string thành số thực
+- `if-else if-else`: Cấu trúc điều kiện phức tạp
+- So sánh số: `<`, `<=`, `>`, `>=`
 
 **Bài 4: Thao tác với mảng**
 ```javascript
@@ -258,6 +297,13 @@ theList.splice(3, 0, 'middle');
 theList.push('LAST');
 console.log(theList);
 ```
+**Kiến thức mới:**
+- `const`: Khai báo hằng số (không thể thay đổi)
+- `unshift()`: Thêm phần tử vào đầu mảng
+- `pop()`: Xóa phần tử cuối mảng
+- `splice()`: Thêm/xóa phần tử tại vị trí cụ thể
+- `push()`: Thêm phần tử vào cuối mảng
+- Mixed data types: Mảng chứa nhiều kiểu dữ liệu
 
 **Bài 5: Game đoán số bí mật**
 ```javascript
@@ -272,6 +318,11 @@ if(a == x){
     alert("Giá trị của bạn nhỏ hơn số bí mật");
 }
 ```
+**Kiến thức mới:**
+- `Math.random()`: Tạo số ngẫu nhiên từ 0-1
+- `Math.round()`: Làm tròn số
+- `var`: Khai báo biến (function scope)
+- So sánh `==`: So sánh giá trị (không quan tâm kiểu dữ liệu)
 
 #### 🎯 Kỹ năng học được:
 - ✅ Sử dụng `Math.sqrt()` và `Math.round()`
@@ -287,19 +338,216 @@ if(a == x){
 - **Bài 1:**
   - **File:** `Lab3/lab3-1.html`, `Lab3/js/lab3-1.js`, `Lab3/assets/lab3-1.css`
   - **Chức năng:** Nhập 2 số và phép toán (+, -, *, /) qua prompt, thực hiện phép tính bằng switch-case, hiển thị kết quả lên trang.
-  - **Kỹ năng:** prompt, switch-case, DOM, kiểm tra điều kiện.
+  - **Kiến thức mới:**
+    ```javascript
+    switch(o) {
+        case '+':
+            var kq = a + b;
+            break;
+        case '-':
+            var kq = a - b;
+            break;
+        // ...
+    }
+    ```
+    - `switch-case`: Cấu trúc điều kiện cho nhiều trường hợp
+    - `break`: Thoát khỏi switch-case
+    - `case`: Định nghĩa trường hợp cụ thể
+
 - **Bài 2:**
   - **File:** `Lab3/lab3-2.html`, `Lab3/js/lab3-2.js`, `Lab3/assets/lab3-2.css`
   - **Chức năng:** Nhập số, in bảng cửu chương từ 1 đến 10, sử dụng for, template string, DOM, in ra console thông tin biến và kiểu dữ liệu.
-  - **Kỹ năng:** for, template string, DOM, console.log.
+  - **Kiến thức mới:**
+    ```javascript
+    for (let i = 1; i <= 10; i++) {
+        let kq = a * i;
+        output += `${a} x ${i} = ${kq}<br>`;
+    }
+    ```
+    - `for` loop: Vòng lặp với điều kiện
+    - Template literals: `${variable}` để nhúng biến vào string
+    - `+=`: Toán tử cộng và gán
+    - `typeof`: Kiểm tra kiểu dữ liệu
+
 - **Bài 3:**
   - **File:** `Lab3/lab3-3.html`, `Lab3/js/lab3-3.js`, `Lab3/assets/lab3-3.css`
   - **Chức năng:** Máy tính số học với giao diện nút bấm, nhập số, chọn toán tử, nhấn = để tính, xử lý nhập nhiều chữ số, báo lỗi chia cho 0.
-  - **Kỹ năng:** DOM nâng cao, sự kiện click, quản lý trạng thái.
+  - **Kiến thức mới:**
+    ```javascript
+    function toan_hang(x) {
+        if (!nhap_b) {
+            if (a === null) a = x;
+            else a = a * 10 + x;
+            updateDisplay(a);
+        }
+    }
+    ```
+    - Event handling: Xử lý sự kiện click
+    - Global variables: Biến toàn cục để lưu trạng thái
+    - DOM manipulation nâng cao
+    - `onclick`: Thuộc tính xử lý sự kiện click
+
 - **Bài 4:**
   - **File:** `Lab3/lab3-4.html`, `Lab3/js/lab3-4.js`, `Lab3/assets/lab3-4.css`
   - **Chức năng:** Trò chơi kéo búa bao giữa người và máy, máy chọn ngẫu nhiên, so sánh kết quả, hiển thị thắng/thua/hòa.
-  - **Kỹ năng:** mảng, Math.random, switch-case, DOM, sự kiện click.
+  - **Kiến thức mới:**
+    ```javascript
+    var arr = ['Rock', 'Paper', 'Scissors'];
+    var s = Math.floor(Math.random() * 3);
+    switch (c) {
+        case 0: // Rock
+            if (s === 2) {
+                // Win logic
+            }
+            break;
+    }
+    ```
+    - Array indexing: Truy cập phần tử mảng bằng index
+    - `Math.floor()`: Làm tròn xuống
+    - Game logic: Tư duy logic cho game đơn giản
+
+---
+
+### ✅ Lab 4: Objects & Functions
+- **Bài 1: Product Objects & Arrays**
+  - **File:** `Lab4/lab4-1.html`, `Lab4/js/lab4-1.js`
+  - **Chức năng:** Tạo object sản phẩm, thêm vào mảng, truy xuất thuộc tính.
+  - **Kiến thức mới:**
+    ```javascript
+    let product = {
+        name: "Iphone 14",
+        model: "Pro Max",
+        cost: 21,
+        quantity: 50
+    };
+    products.push(product);
+    console.log(products[2].quantity);
+    ```
+    - Object literal: Tạo object bằng cú pháp `{}`
+    - Object properties: Thuộc tính của object
+    - `push()`: Thêm object vào mảng
+    - Dot notation: Truy cập thuộc tính object bằng `.`
+
+- **Bài 2: Student Object with Methods**
+  - **File:** `Lab4/lab4-2.html`, `Lab4/js/lab4-2.js`, `Lab4/assets/css/lab4-2.css`
+  - **Chức năng:** Tạo object sinh viên với phương thức hiển thị, xếp loại học lực.
+  - **Kiến thức mới:**
+    ```javascript
+    var sv = new Object();
+    sv.hoTen = prompt("Nhập họ và tên sinh viên:");
+    sv.hienThi = function() {
+        if (this.diem >= 5) {
+            this.hocLuc = "Đậu";
+        } else {
+            this.hocLuc = "Rớt";
+        }
+    };
+    ```
+    - `new Object()`: Tạo object bằng constructor
+    - Object methods: Phương thức của object
+    - `this`: Tham chiếu đến object hiện tại
+    - `querySelector()`: Truy cập element bằng CSS selector
+
+- **Bài 3: Date & Time Display**
+  - **File:** `Lab4/lab4-3.html`, `Lab4/js/lab4-3.js`
+  - **Chức năng:** Hiển thị thời gian hiện tại, cập nhật mỗi giây.
+  - **Kiến thức mới:**
+    ```javascript
+    let currentDateTime = new Date();
+    let h = currentDateTime.getHours();
+    let m = currentDateTime.getMinutes();
+    let s = currentDateTime.getSeconds();
+    window.setTimeout(reload(), 1000);
+    ```
+    - `new Date()`: Tạo object thời gian hiện tại
+    - `getHours()`, `getMinutes()`, `getSeconds()`: Lấy giờ, phút, giây
+    - `setTimeout()`: Thực hiện function sau thời gian delay
+
+- **Bài 4: Window Manipulation**
+  - **File:** `Lab4/lab4-4.html`, `Lab4/js/lab4-4.js`
+  - **Chức năng:** Mở, đóng, kiểm tra trạng thái cửa sổ mới.
+  - **Kiến thức mới:**
+    ```javascript
+    newWindow = window.open("", "Cửa sổ mới", 
+        `toolbar=yes,menubar=yes,width=${width},height=${height}`);
+    if (newWindow && !newWindow.closed) {
+        newWindow.close();
+    }
+    ```
+    - `window.open()`: Mở cửa sổ mới
+    - `window.close()`: Đóng cửa sổ
+    - `window.closed`: Kiểm tra cửa sổ đã đóng chưa
+    - Window properties: Thuộc tính cửa sổ
+
+- **Bài 5: Student Management System**
+  - **File:** `Lab4/lab4-baitap.html`, `Lab4/js/lab4-baitap.js`
+  - **Chức năng:** Tạo bảng sinh viên động, nhập dữ liệu qua prompt.
+  - **Kiến thức mới:**
+    ```javascript
+    let students = [];
+    for (let i = 0; i < n; i++) {
+        let student = {};
+        student.name = prompt(`Nhập tên sinh viên thứ ${i + 1}:`);
+        student.result = student.diem >= 5 ? "Đậu" : "Rớt";
+        students.push(student);
+    }
+    ```
+    - Dynamic object creation: Tạo object động
+    - Ternary operator: `condition ? value1 : value2`
+    - Template literals trong prompt
+    - Dynamic HTML generation
+
+---
+
+### ✅ Lab 5: DOM Manipulation & Shopping Cart
+- **Bài 1: Product Display System**
+  - **File:** `Lab5/lab5-1.html`, `Lab5/js/lab5-cau1.js`
+  - **Chức năng:** Hiển thị danh sách sản phẩm, tính toán giá trị đơn hàng.
+  - **Kiến thức mới:**
+    ```javascript
+    function display(obj) {
+        let product = obj.previousElementSibling.previousElementSibling;
+        let name = product.innerText;
+        let price = parseFloat(product.getAttribute("data-price"));
+        let qty = obj.previousElementSibling;
+        let quantity = parseFloat(qty.value);
+        let amount = quantity * price;
+    }
+    ```
+    - DOM traversal: `previousElementSibling`, `nextElementSibling`
+    - `getAttribute()`: Lấy giá trị thuộc tính HTML
+    - `data-*` attributes: Thuộc tính tùy chỉnh
+    - Function parameters: Tham số function
+
+- **Bài 2: Shopping Cart Application**
+  - **File:** `Lab5/lab5-2.html`, `Lab5/js/lab5-cau2.js`
+  - **Chức năng:** Thêm/xóa sản phẩm vào giỏ hàng, tính tổng tiền.
+  - **Kiến thức mới:**
+    ```javascript
+    function addProduct(button) {
+        let row = button.parentElement.parentElement.cloneNode(true);
+        let btnRemove = row.getElementsByTagName("button")[0];
+        btnRemove.innerText = "Remove";
+        btnRemove.setAttribute("onclick", "removeProduct(this)");
+        document.getElementById("cart").appendChild(row);
+    }
+    ```
+    - `cloneNode()`: Sao chép element
+    - `getElementsByTagName()`: Lấy elements theo tag name
+    - `setAttribute()`: Đặt thuộc tính HTML
+    - `appendChild()`: Thêm element con
+    - `removeChild()`: Xóa element con
+    - String manipulation: `substring()`, `parseInt()`
+
+#### 🎯 Kỹ năng học được:
+- ✅ Object creation và manipulation
+- ✅ Array methods với objects
+- ✅ DOM traversal và manipulation nâng cao
+- ✅ Event handling với objects
+- ✅ Dynamic HTML generation
+- ✅ Shopping cart logic
+- ✅ Date/Time manipulation
+- ✅ Window API
 
 ---
 
