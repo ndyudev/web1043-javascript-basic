@@ -2,6 +2,10 @@ let ProductList = [
   { id: 1, title: "Iphone X", price: 1950 },
   { id: 2, title: "Samsung S23 Ultra", price: 2045 },
   { id: 3, title: "Xiaomi Redmi Note 12", price: 1785 },
+  { id: 4, title: "Xiaomi Redmi Note 12", price: 1785 },
+  { id: 5, title: "Xiaomi Redmi Note 12", price: 1785 },
+  { id: 6, title: "Xiaomi Redmi Note 12", price: 1785 },
+  { id: 7, title: "Xiaomi Redmi Note 12", price: 1785 },
 ];
 
 function showProduct() {
@@ -25,7 +29,6 @@ function addProduct(button) {
   btnRemove.setAttribute("onclick", "removeProduct(this)");
   document.getElementById("cart").appendChild(row);
   totalCart();
-
 }
 
 showProduct();
