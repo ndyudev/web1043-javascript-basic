@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 6 | Demo 1</title>
+  </head>
+  <body>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        button {
+            padding: 20px;
+        }
+    </style>
+    <div class="container">
+      <h3>Magic! Chau Nhat Duy</h3>
+      <button onclick="showTitle()">Hide</button>
+    </div>
+    <script>
+      function showTitle() {
+        let title = document.querySelector("h3");
+        let btn = document.querySelector("button");
+        if (title.style.display === "none") {
+          title.style.display = "block";
+          btn.innerText = "Hide";
+          btn.style.backgroundColor = "#CCC";
+        } else {
+          title.style.display = "none";
+          btn.innerText = "Show";
+          btn.style.backgroundColor = "#000";
+          btn.style.color = "white"
+        }
+      }
+    </script>
+  </body>
+</html>
