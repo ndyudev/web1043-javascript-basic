@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 6 | Câu 2</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f8f8f8;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        gap: 10px;
+      }
+
+      button {
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+        cursor: pointer;
+        font-weight: bolder;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="mark(0)"></button>
+      <button onclick="mark(1)"></button>
+      <button onclick="mark(2)"></button>
+      <button onclick="mark(3)"></button>
+      <button onclick="mark(4)"></button>
+      <button onclick="mark(5)"></button>
+      <button onclick="mark(6)"></button>
+      <button onclick="mark(7)"></button>
+      <button onclick="mark(8)"></button>
+    </div>
+    <script src="./js/lab6-2.js"></script>
+  </body>
+</html>
