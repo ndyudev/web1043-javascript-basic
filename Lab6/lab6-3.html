@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 6 | Câu 3</title>
+  <style>
+    body {
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-family: Arial;
+    }
+
+    img {
+      height: 100px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .btn button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .images {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="images" id="images"></div>
+
+    <div class="btn">
+      <button onclick="showFirst()">First</button>
+      <button onclick="showPrev()">Prev</button>
+      <button onclick="showNext()">Next</button>
+      <button onclick="showLast()">Last</button>
+    </div>
+  </div>
+
+  <script src="./js/lab6-3.js"></script>
+</body>
+</html>

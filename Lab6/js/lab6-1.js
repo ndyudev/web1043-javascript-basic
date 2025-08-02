@@ -1,6 +1,41 @@
 let menus = document.querySelectorAll(".title");
 let openText = document.querySelectorAll(".myText");
 
+
+menus.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    console.log(el.nextElementSibling);
+    remover();
+    el.nextElementSibling.classList.toggle("active");
+  })
+})
+
+function remover() {
+  openText.forEach((ele) => {
+    ele.classList.remove("active");
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Test
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // dạng 1 chỉ cần value
 numbers.forEach((num) => {
