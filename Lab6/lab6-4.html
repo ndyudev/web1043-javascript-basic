@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 6 | Cau 4</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 6 | Câu 4</title>
+  <style>
+    .output {
+      width: 500px;
+      height: 500px;
+      border: 2px solid black;
+      margin: 40px auto;
+      position: relative;
+      background-color: #f0f0f0;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      position: absolute;
+      cursor: pointer;
+      display: none;
+    }
+
+    .message {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <style>
-        .output {
-            width: 500px;
-            height: 500px;
-            border: 1px solid black;
-            margin: auto;
-            text-align: center;
-        }
-        .box {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            position: relative;
-            top: 50px;
-            left: 20%;
-        }
-
-        .message {
-            text-align: center;
-            padding: 10px;
-            font-size: 1.3rem;
-        }
-    </style>
-    <div class="container">
-        <div class="ouput"></div>
-        <div class="message"></div>
-        <script src="./js/lab6-4.js"></script>
-    </div>
+  <div class="output"></div>
+  <div class="message">Ấn nút để bắt đầu game phản xạ!</div>
+  <button id="startBtn">Bắt đầu chơi</button>
 </body>
+<script src="./js/lab6-4.js"></script>
 </html>
