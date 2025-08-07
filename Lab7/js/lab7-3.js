@@ -1,21 +1,20 @@
 function valForm() {
-  var p = event.target.children;
-  if (p.firstName.value == "") {
-    message("Need a first name!");
+  let firstName = document.getElementById("firstname").value;
+  let lastName = document.getElementById("lastname").value;
+  let age = document.getElementById("age").value;
+
+  if (firstName === "" || lastName === "" || age === "") {
+    message("Hãy điền đầy đủ.");
     return false;
   }
 
-  if (p.lastName.value == "") {
-    message("Need a last name!");
+  if (isNaN(age) || age < 0) {
+    message("Hãy điền tuổi hợp lệ.");
     return false;
   }
 
-  if (p.age.value < 0) {
-    message("chưa đẻ!");
-    return false;
-  }
+  return true;
 }
-
-function message(mess) {
-  document.getElementById("wrapper").innerHTML = mess;
+function message(m) {
+  document.getElementById("wrapper").innerHTML = m;
 }
