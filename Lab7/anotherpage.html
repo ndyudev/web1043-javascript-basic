@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Another Page</title>
+    <title>Anotherpage</title>
 </head>
 <body>
-    
+    <script>
+        let q = window.location.search;
+        let params = new URLSearchParams(q);
+        for (let p of params) {
+            console.log(params.get("firstname"));
+            alert(p);
+        }
+        console.log
+    </script>
 </body>
 </html>

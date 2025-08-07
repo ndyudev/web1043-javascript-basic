@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 7 | Question 5</title>
+    <script src="./js/lab7-5.js"></script>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f6fa;
+        padding: 40px;
+        color: #333;
+      }
+
+      h1 {
+        text-align: center;
+        color: #5a2b8c;
+        margin-bottom: 30px;
+      }
+
+      form {
+        width: 400px;
+        margin: auto;
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1em;
+        transition: 0.3s;
+      }
+
+      input[type="text"]:focus,
+      select:focus {
+        border-color: #5a2b8c;
+        outline: none;
+      }
+
+      .radio-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      input[type="radio"] {
+        transform: scale(1.2);
+      }
+
+      .shipping-fee {
+        margin-bottom: 20px;
+      }
+
+      .shipping-fee input {
+        background-color: #eee;
+        border: 1px solid #ccc;
+        cursor: not-allowed;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        background-color: #5a2b8c;
+        color: white;
+        padding: 12px;
+        font-size: 1em;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #7a4dd3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Đặt hàng</h1>
+    <form action="" method="get" onsubmit="return kiemTra()">
+      <label for="product">Tên sản phẩm</label>
+      <input type="text" name="product" id="product" class="product" />
+
+      <label for="type">Loại sản phẩm</label>
+      <select name="type" id="type">
+        <option value="pro1">Sản phẩm 1</option>
+        <option value="pro2">Sản phẩm 2</option>
+        <option value="pro3">Sản phẩm 3</option>
+      </select>
+
+      <label for="price">Đơn giá</label>
+      <input type="text" name="price" id="price" class="price" />
+
+      <label>Nơi nhận hàng</label>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input
+            type="radio"
+            name="place"
+            id="place_noi_thanh"
+            value="Nội thành"
+            checked
+          />
+          <label for="place_noi_thanh">Nội thành</label>
+        </div>
+        <div class="radio-option">
+          <input
+            type="radio"
+            name="place"
+            id="place_ngoai_thanh"
+            value="Ngoại thành"
+          />
+          <label for="place_ngoai_thanh">Ngoại thành</label>
+        </div>
+      </div>
+
+      <div class="shipping-fee">
+        <label for="phivc">Phí vận chuyển</label>
+        <input type="text" name="phivc" id="phivc" value="100,000" readonly />
+      </div>
+
+      <input type="submit" value="Đặt hàng" />
+    </form>
+  </body>
+</html>
