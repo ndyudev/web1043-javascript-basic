@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 | Question 3</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Custom HTML5 Video Player</h1>
+        <div id="player-content">
+            <video id="myplayer" width="640" height="360">
+                <source src="./assets/video/pexels-dean-diemert-12191227-(360p).mp4" type="video/mp4">
+                Your brower does not support HTML5 Video
+            </video>
+            <div id="controls">
+                <button onclick="playPause()">Play/Pause</button>
+                <button onclick="stopVideo()">Stop</button>
+                <button onclick="replayVideo()">Replay</button>
+                <button onclick="increaseVolume()">Volume (+)</button>
+                <button onclick="decreaseVolume()">Volume (-)</button>
+                <button onclick="muteVolume()">Mute/Unmute</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/lab8-3.js"></script>
+</body>
+</html>
