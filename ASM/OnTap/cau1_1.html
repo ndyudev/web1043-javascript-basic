@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On Tap Bảo vệ ASM - Image Slider</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 20px;
+      }
+      
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .images {
+        width: 400px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+      
+      button {
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        margin: 0 10px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      button:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+      
+      .image-counter {
+        margin-top: 15px;
+        font-size: 18px;
+        color: #666;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Image Slider</h2>
+      <img src="./assets/images/flan-1.jpg" alt="Flan Image" class="images" id="currentImage" />
+      <div class="image-counter">
+        <span id="currentIndex">1</span> / <span id="totalImages">3</span>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button onclick="prev()">Previous</button>
+      <button onclick="next()">Next</button>
+    </div>
+
+    <script>
+      // Khai báo mảng ảnh TRƯỚC khi sử dụng
+      let images = [
+        "./assets/images/flan-1.jpg",
+        "./assets/images/flan-2.jpg",
+        "./assets/images/flan-3.jpg",
+      ];
+      
+      let i = 0; // Bắt đầu từ index 0
+      
+      // Function để cập nhật ảnh
+      function updateImage() {
+        const currentImage = document.getElementById('currentImage');
+        const currentIndex = document.getElementById('currentIndex');
+        
+        currentImage.src = images[i];
+        currentIndex.textContent = i + 1;
+      }
+      
+      // Function Previous
+      function prev() {
+        i--;
+        if (i < 0) {
+          i = images.length - 1;
+        }
+        updateImage(); // Cập nhật ảnh sau khi thay đổi index
+      }
+      
+      // Function Next
+      function next() {
+        i++;
+        if (i >= images.length) {
+          i = 0;
+        }
+        updateImage(); // Cập nhật ảnh sau khi thay đổi index
+      }
+      
+      // Khởi tạo khi trang load
+      window.onload = function() {
+        updateImage();
+      };
+    </script>
+  </body>
+</html>
