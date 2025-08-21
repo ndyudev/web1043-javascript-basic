@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+    }
+    
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 2px solid #ddd;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    .nen {
+      background-color: #ffe6e6;
+      border-color: #ff0000 !important;
+    }
+    
+    #arlet {
+      text-align: center;
+      padding: 10px;
+      font-size: 16px;
+    }
+    
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+  </style>
+  <body>
+    <div class="form">
+      <h2>Hỗ trợ trực tuyến</h2>
+      <label for="name">Họ và tên</label>
+      <input type="text" id="name" name="name" placeholder="Nhập họ và tên" />
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" placeholder="Nhập email" />
+      <label for="phone">Số điện thoại</label>
+      <input type="text" name="phone" id="phone" placeholder="VD:0123456789" />
+      <label for="support">Nhóm hỗ trợ</label>
+      <select name="support" id="support">
+        <option value="">Chọn nhóm hỗ trợ</option>
+        <option value="Hiển thị ý kiến khách hàng">
+          Hiển thị ý kiến khách hàng
+        </option>
+        <option value="Thông tin khuyến mãi">Thông tin khuyến mãi</option>
+        <option value="Báo lỗi dịch vụ">Báo lỗi dịch vụ</option>
+        <option value="Hỗ trợ kỹ thuật">Hỗ trợ kỹ thuật</option>
+      </select>
+      <button type="submit" onclick="Check()">Gửi yêu cầu</button>
+      <h2 id="arlet"></h2>
+    </div>
+    <script>
+      const ten = document.getElementById("name");
+      const email = document.getElementById("email");
+      const phone = document.getElementById("phone");
+      const support = document.getElementById("support");
+      
+      function Check() {
+        let kiemtra = false;
+        document.getElementById("arlet").className = "";
+        
+        if (ten.value.trim() === "" || ten.value.length < 8) {
+          alert("bắt buộc phải nhập liệu và chiều dài tối thiểu 8 ký tự");
+          ten.focus();
+          ten.classList.add("nen");
+          document.getElementById("arlet").innerHTML = "Đăng ký thất bại!";
+          document.getElementById("arlet").className = "error";
+          return;
+        }
+        if (
+          email.value.trim() === "" ||
+          !email.value.includes("@") ||
+          !email.value.includes(".")
+        ) {
+          alert("Email không hợp lệ");
+          email.focus();
+          email.classList.add("nen");
+          document.getElementById("arlet").innerHTML = "Đăng ký thất bại!";
+          document.getElementById("arlet").className = "error";
+          return;
+        }
+        if (
+          phone.value.trim() === "" ||
+          phone.value.length < 10 ||
+          phone.value.length > 11 ||
+          isNaN(phone.value)
+        ) {
+          alert("Số điện thoại không hợp lệ");
+          phone.focus();
+          phone.classList.add("nen");
+          document.getElementById("arlet").innerHTML = "Đăng ký thất bại!";
+          document.getElementById("arlet").className = "error";
+          return;
+        }
+        if (support.value === "") {
+          alert("Vui lòng chọn nhóm hỗ trợ");
+          support.focus();
+          support.classList.add("nen");
+          document.getElementById("arlet").innerHTML = "Đăng ký thất bại!";
+          document.getElementById("arlet").className = "error";
+          return;
+        }
+        
+        alert("Yêu cầu của bạn đã được gửi thành công!");
+        ten.classList.remove("nen");
+        email.classList.remove("nen");
+        phone.classList.remove("nen");
+        support.classList.remove("nen");
+        document.getElementById("arlet").innerHTML = "Đăng ký thành công!";
+        document.getElementById("arlet").className = "success";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="vi">
+      <head>
+        <meta charset="UTF-8" />
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+          }
+          .chinh img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+          }
+          .phu {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+          }
+          .phu img {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            border: 2px solid transparent;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Thay đổi hình ảnh</h1>
+        <!-- Anh lon -->
+        <div class="chinh">
+          <img id="anhchinh" src="./images/product-1.jpg" />
+        </div>
+
+        <div class="phu">
+          <img src="./images/product-4.jpg" onclick="doianh(this)" />
+          <img src="./images/product-2.jpg" onclick="doianh(this)" />
+          <img src="./images/product-3.jpg" onclick="doianh(this)" />
+        </div>
+      </body>
+      <script>
+        function doianh(ele) {
+          document.getElementById("anhchinh").src = ele.src;
+        }
+      </script>
+    </html>
+  </body>
+</html>

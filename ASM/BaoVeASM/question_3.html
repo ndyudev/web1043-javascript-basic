@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 3 - JS Basic</title>
+  </head>
+  <body>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .product {
+            border: 2px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product img {
+            height: 200px;
+            width: 200px;
+        }
+        
+        .highest-price {
+            border-color: red;
+        }
+    </style>
+    
+    <h1>Sản phẩm có giá cao nhất</h1>
+    
+    <div id="highestProduct"></div>
+    
+    <script>
+      let listProduct = [
+        {
+          id: 1,
+          name: "Classic Butter Cookies",
+          price: 95000,
+          img: ["./images/product-1.jpg", "./images/product-2.jpg"],
+          qty: 20
+        },
+        {
+          id: 2,
+          name: "Chocolate Chip Cookies",
+          price: 105000,
+          img: ["./images/product-2.jpg", "./images/product-3.jpg"],
+          qty: 20
+        },
+        {
+          id: 3,
+          name: "Matcha Almond Cookies",
+          price: 115000,
+          img: ["./images/product-3.jpg", "./images/product-4.jpg"],
+          qty: 20
+        },
+      ];
+
+      function findProductPricest() {
+        let maxPrice = 0;
+        let maxProduct = null;
+        
+        for (let i = 0; i < listProduct.length; i++) {
+          if (listProduct[i].price > maxPrice) {
+            maxPrice = listProduct[i].price;
+            maxProduct = listProduct[i];
+          }
+        }
+        
+        return maxProduct;
+      }
+
+      function showHighestProduct() {
+        let product = findProductPricest();
+        
+        let str = `
+          <div class="product highest-price">
+            <img src="${product.img[0]}" 
+                 alt="${product.name}" 
+                 onmouseover="this.src='${product.img[1]}'" 
+                 onmouseout="this.src='${product.img[0]}'">
+            <h2>${product.name}</h2>
+            <p>Giá: ${product.price.toLocaleString('vi-VN')} VNĐ</p>
+            <p>Số lượng: ${product.qty}</p>
+          </div>
+        `;
+        
+        document.getElementById('highestProduct').innerHTML = str;
+      }
+      showHighestProduct();
+    </script>
+  </body>
+</html>
