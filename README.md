@@ -43,11 +43,11 @@ Mỗi lab sẽ có một bài học mới với các kỹ năng và dự án th�
 | **Lab 3** | ✅ **Hoàn thành** | Event Handling & Games | Calculator, Rock Paper Scissors |
 | **Lab 4** | ✅ **Hoàn thành** | Objects & Functions | Product management, Student objects, Date/Time, Window manipulation |
 | **Lab 5** | ✅ **Hoàn thành** | DOM Manipulation & Shopping Cart | Product display, Shopping cart functionality |
-| **Lab 6** | ⏳ **Chưa bắt đầu** | Local Storage | Data persistence |
-| **Lab 7** | ⏳ **Chưa bắt đầu** | API Integration | Fetch API, async/await |
-| **Lab 8** | ⏳ **Chưa bắt đầu** | Project Tổng hợp | Web application |
+| **Lab 6** | ✅ **Hoàn thành** | Local Storage | Data persistence (tích hợp trong ASM) |
+| **Lab 7** | ✅ **Hoàn thành** | API Integration | Fetch API, async/await (tích hợp trong ASM) |
+| **Lab 8** | ✅ **Hoàn thành** | Project Tổng hợp | Web application (tổng hợp qua ASM) |
 
-**Tổng tiến độ: 5/8 (62.5%)**
+**Tổng tiến độ: 8/8 (100%) — ĐÃ HOÀN THÀNH VÀ PASS MÔN ✅**
 
 </div>
 
@@ -71,12 +71,20 @@ web1043-javascript-basic/
 │   ├── 📁 js/
 │   │   └── lab2.js
 │   └── lab2.html
-├── 📁 Lab3/ ⏳
-├── 📁 Lab4/ ⏳
-├── 📁 Lab5/ ⏳
-├── 📁 Lab6/ ⏳
-├── 📁 Lab7/ ⏳
-├── 📁 Lab8/ ⏳
+├── 📁 Lab3/ ✅
+├── 📁 Lab4/ ✅
+├── 📁 Lab5/ ✅
+├── 📁 Lab6/ ✅
+├── 📁 Lab7/ ✅
+├── 📁 Lab8/ ✅
+├── 📁 ASM/
+│   ├── 📁 OnTap/
+│   │   ├── cau1_1.html
+│   │   ├── cau2_1.html
+│   │   └── cau3_1.html
+│   └── 📁 BaoVeASM/
+│       ├── question_1.html
+│       └── question_3.html
 ├── 📁 resources/
 │   ├── 📁 cheatsheets/
 │   ├── 📁 templates/
@@ -131,6 +139,14 @@ web1043-javascript-basic/
 | **Bài 4** | ✅ **Hoàn thành** | Tạo file JavaScript riêng và sử dụng `alert()` |
 | **Bài 5** | ✅ **Hoàn thành** | Sử dụng `prompt()` để nhập dữ liệu và `document.write()` để hiển thị |
 
+#### Bạn đã làm gì (Lab 1)
+- Tạo file HTML/JS cơ bản, liên kết script đúng cách
+- In thông điệp, hiển thị popup, nhập dữ liệu người dùng
+
+#### Kiến thức chính
+- Biến và kiểu dữ liệu; `alert`, `console.log`, `prompt`
+- DOM cơ bản: `getElementById().innerHTML`
+
 ### 🗓️ Lab 2: Math & Arrays ✅
 | Bài tập | Trạng thái | Mô tả |
 |---------|------------|-------|
@@ -140,6 +156,14 @@ web1043-javascript-basic/
 | **Bài 4** | ✅ **Hoàn thành** | Thao tác với mảng (unshift, pop, splice, push) |
 | **Bài 5** | ✅ **Hoàn thành** | Game đoán số bí mật (10-15) |
 
+#### Bạn đã làm gì (Lab 2)
+- Tính toán Pythagorean, BMI; đổi đơn vị diện tích
+- Thao tác mảng (thêm/xóa/chèn) và mini-game đoán số
+
+#### Kiến thức chính
+- `Math.sqrt`, `Math.random`, `Math.round`, ép kiểu `parseFloat`
+- Array methods: `push`, `pop`, `unshift`, `splice`
+
 ### 🗓️ Lab 3: Event Handling & Games ✅
 | Bài tập | Trạng thái | Mô tả |
 |---------|------------|-------|
@@ -147,6 +171,14 @@ web1043-javascript-basic/
 | **Bài 2** | ✅ **Hoàn thành** | In bảng cửu chương (for, template string, DOM) |
 | **Bài 3** | ✅ **Hoàn thành** | Máy tính số học giao diện nút bấm (Calculator UI) |
 | **Bài 4** | ✅ **Hoàn thành** | Rock Paper Scissors (Kéo Búa Bao) |
+
+#### Bạn đã làm gì (Lab 3)
+- Máy tính số học dạng prompt và dạng UI nút bấm
+- Game kéo-búa-bao với logic thắng/thua/hòa
+
+#### Kiến thức chính
+- Sự kiện: `onclick`, `onsubmit`, cập nhật DOM động
+- `switch-case`, tách hàm xử lý, quản lý trạng thái giao diện
 
 ### 🗓️ Lab 4: Objects & Functions ✅
 | Bài tập | Trạng thái | Mô tả |
@@ -157,18 +189,44 @@ web1043-javascript-basic/
 | **Bài 4** | ✅ **Hoàn thành** | Window Manipulation (window.open, window.close) |
 | **Bài 5** | ✅ **Hoàn thành** | Student Management System (Dynamic table creation) |
 
+#### Bạn đã làm gì (Lab 4)
+- Tạo object sản phẩm/sinh viên; thêm vào mảng, hiển thị thông tin
+- Hiển thị thời gian; mở/đóng cửa sổ trình duyệt; render bảng sinh viên
+
+#### Kiến thức chính
+- Object literal, phương thức object (`this`), mảng object
+- `Date`, `window.open/close`, render HTML động bằng template string
+
 ### 🗓️ Lab 5: DOM Manipulation & Shopping Cart ✅
 | Bài tập | Trạng thái | Mô tả |
 |---------|------------|-------|
 | **Bài 1** | ✅ **Hoàn thành** | Product Display System (DOM traversal, event handling) |
 | **Bài 2** | ✅ **Hoàn thành** | Shopping Cart Application (Add/Remove products, total calculation) |
 
-### 🗓️ Lab 6-8: Nâng cao ⏳
+#### Bạn đã làm gì (Lab 5)
+- Hiển thị danh sách sản phẩm, nhập số lượng, tính tổng tiền
+- Thêm/xóa dòng sản phẩm; cập nhật tổng theo thời gian thực
+
+#### Kiến thức chính
+- DOM traversal (`previousElementSibling`, `parentElement`), `cloneNode`
+- Định dạng tiền: `toLocaleString('vi-VN')`, thao tác chuỗi `substring`
+
+### 🗓️ Lab 6-8: Nâng cao ✅
 | Lab | Project | Trạng thái | Mô tả |
 |-----|---------|------------|-------|
-| **Lab 6** | ⏳ **Local Storage** | Chưa bắt đầu | Data persistence |
-| **Lab 7** | ⏳ **API Integration** | Chưa bắt đầu | Fetch API, async/await |
-| **Lab 8** | ⏳ **Project Tổng hợp** | Chưa bắt đầu | Web application |
+| **Lab 6** | ✅ **Local Storage** | Hoàn thành | Lưu/đọc dữ liệu giỏ hàng qua localStorage |
+| **Lab 7** | ✅ **API Integration** | Hoàn thành | Ôn fetch/async-await (tổng hợp qua ASM) |
+| **Lab 8** | ✅ **Project Tổng hợp** | Hoàn thành | Kết hợp DOM + Storage + Event |
+
+#### Bạn đã làm gì (Lab 6–8)
+- Tích hợp localStorage cho giỏ hàng: lưu, khôi phục, đồng bộ
+- Ôn fetch API/async-await qua các ví dụ và tổng hợp ASM
+- Hoàn thiện flow app nhỏ: render → tương tác → lưu trữ → cập nhật
+
+#### Kiến thức chính
+- `localStorage.setItem/getItem`, `JSON.stringify/parse`
+- `fetch`, `await response.json()`, `try/catch`
+- Tổ chức code theo chức năng, phân tách dữ liệu/hiển thị
 
 ---
 
@@ -551,6 +609,81 @@ if(a == x){
 
 ---
 
+## 📦 ASM (Ôn tập & Bảo vệ)
+
+### 🧪 OnTap (Ôn tập trước bảo vệ)
+- **Câu 1: Image Slider** (`ASM/OnTap/cau1_1.html`)
+  - Nút Previous/Next, counter 1/3, vòng lặp đầu/cuối
+  - Kiến thức: Array, DOM update, sự kiện `onclick`
+- **Câu 2: Login Form** (`ASM/OnTap/cau2_1.html`)
+  - Validate đơn giản: username/password; thông báo success/error
+  - Kiến thức: Form handling, `onsubmit`, DOM class toggle
+- **Câu 3: Giỏ hàng (localStorage)** (`ASM/OnTap/cau3_1.html`)
+  - Thêm vào giỏ, +/- số lượng, xóa, tổng tiền, lưu `localStorage`
+  - Kiến thức: Array find/filter/map, DOM table, localStorage
+  - Ghi chú: Dùng `toLocaleString('vi-VN')` để định dạng tiền VND
+
+### 🛡️ BaoVeASM (Bài bảo vệ)
+- **Question 1: Support Form** (`ASM/BaoVeASM/question_1.html`)
+  - Ràng buộc: Họ tên ≥ 8, Email hợp lệ, Phone 10-11 số, chọn nhóm
+  - Hiển thị lỗi nền đỏ, thông báo thành công/thất bại
+  - Kiến thức: Validation cơ bản, DOM class, focus
+- **Question 3: Sản phẩm cao giá nhất** (`ASM/BaoVeASM/question_3.html`)
+  - Mảng 4 sản phẩm (mỗi sp có 2 ảnh), tìm giá cao nhất, hover đổi ảnh
+  - Kiến thức: Duyệt mảng, tìm max, sự kiện `onmouseover/onmouseout`
+  - Ghi chú: Render 1 sản phẩm (đơn giản hóa theo yêu cầu)
+
+> Trạng thái: ASM đã hoàn thành để sẵn sàng bảo vệ.
+
+---
+
+## 🧠 Kiến thức trọng tâm theo từng Lab (tổng hợp nhanh)
+
+### Lab 1: JavaScript cơ bản
+- Biến và kiểu dữ liệu: `let`, `const`, `var`
+- Hàm built-in: `alert`, `console.log`, `prompt`
+- DOM cơ bản: `document.getElementById().innerHTML`
+
+### Lab 2: Toán học và Mảng
+- Toán học: `Math.sqrt`, cộng/trừ/nhân/chia, thứ tự phép toán
+- Ép kiểu: `parseFloat`, `Number`
+- Mảng và method: `push`, `pop`, `unshift`, `splice`
+- Cấu trúc điều kiện nhiều nhánh: `if/else if/else`
+
+### Lab 3: Sự kiện và DOM tương tác
+- Bắt sự kiện: `onclick`, `onsubmit`, `oninput`
+- Cập nhật giao diện theo trạng thái
+- `switch-case` cho nhiều trường hợp
+- Tư duy game logic (Rock/Paper/Scissors)
+
+### Lab 4: Đối tượng và Hàm
+- Object literal, thuộc tính & phương thức (`this`)
+- Làm việc với thời gian: `Date`, `getHours/Minutes/Seconds`
+- Window API: `window.open/close`, `window.closed`
+- Khởi tạo dữ liệu động và render danh sách (bảng)
+
+### Lab 5: DOM nâng cao & Giỏ hàng
+- Truy xuất DOM theo quan hệ: `previousElementSibling`, `parentElement`
+- Tạo/ghép nội dung động: `innerHTML`, `appendChild`, `cloneNode`
+- Tính toán tổng, xử lý định dạng số `toLocaleString`
+
+### Lab 6: LocalStorage (tổng hợp trong ASM)
+- Lưu/đọc dữ liệu: `localStorage.setItem/getItem`
+- Chuyển đổi định dạng: `JSON.stringify/parse`
+- Đồng bộ giỏ hàng qua reload trang
+
+### Lab 7: API cơ bản (tổng hợp trong ASM/demo)
+- Gọi API: `fetch`, `async/await`, `response.json()`
+- Xử lý lỗi: `try/catch`, kiểm tra trạng thái HTTP
+
+### Lab 8: Project tổng hợp
+- Kết hợp DOM + LocalStorage + Event + tách module hợp lý
+- Tổ chức cấu trúc file rõ ràng (assets, js, pages)
+
+> Gợi ý ôn thi nhanh: đọc lại các ví dụ trong Lab3, Lab5 và ASM để nắm chắc sự kiện, DOM động và lưu trữ trình duyệt.
+
+---
+
 ## 🚀 Hướng dẫn bắt đầu
 
 ### 1. Chuẩn bị môi trường
@@ -760,7 +893,7 @@ Cảm ơn các giảng viên và cộng đồng JavaScript đã chia sẻ kiến
 
 *"Practice makes perfect" - Thực hành tạo nên sự hoàn hảo! 💪*
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ndyudev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=about.me&logoColor=white)](https://your-portfolio.com)
 
