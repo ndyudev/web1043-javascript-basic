@@ -24,88 +24,130 @@ let courses = [
 
 /* -----------------------------------
  * 🔹 1. forEach() — Duyệt qua từng phần tử
- * ----------------------------------- */
-courses.forEach((course, index) => {
+ * -----------------------------------
+ * ➜ Không return được (luôn trả về undefined)
+ * ➜ Dùng để lặp qua mảng và thao tác với từng phần tử
+ */
+courses.forEach(function (course, index) {
   console.log(index, course);
 });
 
 /* -----------------------------------
  * 🔹 2. every() — Kiểm tra TẤT CẢ phần tử
- * ----------------------------------- */
-let isFreeEvery = courses.every((course) => course.coin === 0);
+ * -----------------------------------
+ * ➜ Trả về true nếu MỌI phần tử đều thỏa điều kiện
+ * ➜ Trả về false nếu CHỈ 1 phần tử sai điều kiện
+ */
+let isFreeEvery = courses.every(function (course) {
+  return course.coin === 0; // Kiểm tra toàn bộ khoá học có miễn phí không
+});
 console.log("Tất cả đều free? 👉", isFreeEvery);
 
 /* -----------------------------------
  * 🔹 3. some() — Kiểm tra CHỈ CẦN 1 phần tử
- * ----------------------------------- */
-let isFreeSome = courses.some((course) => course.coin === 0);
+ * -----------------------------------
+ * ➜ Trả về true nếu ÍT NHẤT 1 phần tử thỏa điều kiện
+ */
+let isFreeSome = courses.some(function (course) {
+  return course.coin === 0; // Chỉ cần có 1 khoá học miễn phí là true
+});
 console.log("Có khóa học nào free không? 👉", isFreeSome);
 
 /* -----------------------------------
  * 🔹 4. find() — Tìm phần tử ĐẦU TIÊN
- * ----------------------------------- */
-let firstFrontEnd = courses.find(
-  (course) => course.name === "Front End Develop"
-);
-console.log("Tìm bằng find() 👉", firstFrontEnd);
+ * -----------------------------------
+ * ➜ Trả về phần tử đầu tiên thỏa điều kiện
+ * ➜ Không tìm thấy → undefined
+ */
+let isLookForFind = courses.find(function (course) {
+  return course.name === "Front End Develop"; // Tìm khoá đầu tiên có tên này
+});
+console.log("Tìm bằng find() 👉", isLookForFind);
 
 /* -----------------------------------
  * 🔹 5. filter() — Lọc danh sách
- * ----------------------------------- */
-let listCourse = courses.filter(
-  (course) => course.name === "Front End Develop"
-);
+ * -----------------------------------
+ * ➜ Giống find() nhưng trả về TẤT CẢ phần tử thỏa điều kiện (mảng mới)
+ */
+let listCourse = courses.filter(function (course) {
+  return course.name === "Front End Develop"; // Lọc toàn bộ các khoá có tên này
+});
 console.log("Danh sách khóa Front End Develop 👉", listCourse);
 
 /* -----------------------------------
  * 🔹 6. map() — Biến đổi từng phần tử → mảng mới
- * ----------------------------------- */
-let newCourses = courses.map((course, index) => ({
-  id: course.id,
-  name: `Khóa học ${course.name}`,
-  coin: course.coin,
-  coinText: `Giá: ${course.coin}`,
-  index: index,
-  originArray: course,
-}));
+ * -----------------------------------
+ * ➜ Dùng khi muốn tạo mảng mới từ mảng cũ
+ */
+function HandlerCourse(course, index, origin) {
+  return {
+    id: course.id,
+    name: `Khóa học ${course.name}`, // Thêm chữ "Khóa học" vào tên
+    coin: course.coin,
+    coinText: `Giá: ${course.coin}`, // Thêm text giá
+    index: index, // Lưu index hiện tại
+    originArray: course, // Lưu lại phần tử gốc
+  };
+}
+let newCourses = courses.map(HandlerCourse);
 console.log(newCourses);
 
-// Lấy danh sách chỉ có tên khóa học
-let newNameCourses = courses.map((course) => ({ name: course.name }));
+// 🔹 map() - Lấy danh sách chỉ có tên khóa học
+function HandlerNameCourse(course) {
+  return { name: course.name };
+}
+let newNameCourses = courses.map(HandlerNameCourse);
 console.log(newNameCourses);
 
 /* -----------------------------------
  * 🔹 7. reduce() — Gom dữ liệu lại
- * ----------------------------------- */
+ * -----------------------------------
+ * ➜ Dùng để tính toán/tích lũy (tổng, trung bình, gộp chuỗi,…)
+ */
 let i = 0;
 function totalCoinCourse(accumulator, currentValue, currentIndex, originArray) {
   i++;
+  // In ra từng lần chạy để dễ hiểu
   console.table({
     "Lượt chạy": i,
-    "Tích lũy": accumulator,
+    "Giá trị tích lũy": accumulator,
     "Coin hiện tại": currentValue.coin,
     Index: currentIndex,
   });
+  // Tích lũy coin lại
   return accumulator + currentValue.coin;
 }
 let totalCoinCourses = courses.reduce(totalCoinCourse, 0);
 console.log("Tổng coin bằng reduce 👉", totalCoinCourses);
 
-// So sánh với loop thường
+// 🆚 So sánh với loop thường
 let totalCoin = 0;
-for (const course of courses) totalCoin += course.coin;
+for (const course of courses) {
+  totalCoin += course.coin;
+}
 console.log("Tổng coin bằng loop 👉", totalCoin);
 
 /* -----------------------------------
  * 🔹 Reduce — Làm phẳng mảng (Flat array)
- * ----------------------------------- */
+ * -----------------------------------
+ * ➜ Dùng để gộp mảng con thành mảng 1 cấp
+ */
 let depthArray = [1, 2, [3, 4], 5, 6, [7, 8, 9]];
-let flatArray = depthArray.reduce((flat, item) => flat.concat(item), []);
+
+// Hàm xử lý từng phần tử trong reduce
+function flatArrayHandler(flatOutput, depthItem) {
+  // concat() dùng để gộp phần tử/mảng vào mảng mới
+  return flatOutput.concat(depthItem);
+}
+
+let flatArray = depthArray.reduce(flatArrayHandler, []);
 console.log(flatArray);
 
 /* -----------------------------------
  * 🔹 Reduce — Lấy toàn bộ khoá học trong topics
- * ----------------------------------- */
+ * -----------------------------------
+ * ➜ Mỗi topic chứa nhiều courses → gom lại thành 1 mảng duy nhất
+ */
 let topics = [
   {
     topic: "Front-end",
@@ -125,92 +167,32 @@ let topics = [
   },
 ];
 
-let newCoursesTopic = topics.reduce(
-  (all, topic) => all.concat(topic.courses),
-  []
-);
+function newCoursesTopicHandler(course, topic) {
+  // Gộp tất cả các courses của từng topic vào mảng chung
+  return course.concat(topic.courses);
+}
+
+let newCoursesTopic = topics.reduce(newCoursesTopicHandler, []);
 console.log(newCoursesTopic);
 
-// Render ra HTML (giả lập)
-let htmlCourses = newCoursesTopic.map(
-  (course) => `
-  <div>
-    <h2>${course.title}</h2>
-    <p>ID: ${course.id}</p>
-  </div>
-`
-);
-console.log(htmlCourses.join(""));
+// Map để render ra HTML dạng thẻ <div>
+var htmlCourses = newCoursesTopic.map(function (course) {
+  return `
+    <div>
+      <h2>${course.title}</h2>
+      <p>ID: ${course.id}</p>
+    </div>
+  `;
+});
+
+console.log(htmlCourses.join("")); // join() để nối thành 1 chuỗi HTML hoàn chỉnh
 
 /* -----------------------------------
- * 🔹 8. includes() — Kiểm tra chuỗi/mảng
- * ----------------------------------- */
-// String
-let title = "Responsive web design";
-console.log(title.includes("web", 11)); // false
-
-// Array
-let coursesArray = ["PHP", "Java", "JS"];
-console.log(coursesArray.includes("Java")); // true
-
-// Bài tập includes
-let cars = ["Rolls-Royce", "Mercedes", "Lexus", "BMW", "Audi"];
-function checkCar(cars) {
-  return cars.includes("Mercedes", 2);
-}
-console.log(checkCar(cars)); // false
-
-/* -----------------------------------
- * 🎬 Bài tập reduce() — Tính điểm trung bình IMDB
- * ----------------------------------- */
-function calculateRating(watchList) {
-  let directorNolan = watchList.filter(
-    (film) => film.Director === "Christopher Nolan"
-  );
-  let total = directorNolan.reduce(
-    (sum, film) => sum + parseFloat(film.imdbRating),
-    0
-  );
-  return total / directorNolan.length;
-}
-console.log(calculateRating(watchList));
-
-/* -----------------------------------
- * 🔹 Mô phỏng reduce() — Viết lại reduce2
- * ----------------------------------- */
-Array.prototype.reduce2 = function (callback, initialValue) {
-  let i = 0;
-  let result = initialValue ?? this[0];
-  if (initialValue === undefined) i = 1;
-  for (; i < this.length; i++) {
-    result = callback(result, this[i], i, this);
-  }
-  return result;
-};
-
-const numbers = [1, 2, 3, 4, 5];
-const result = numbers.reduce2((total, num) => total + num, 0);
-console.log(result); // 15
-
-/* -----------------------------------
- * 🔹 Bài tập: Chuyển arr → obj bằng reduce
- * ----------------------------------- */
-var arr = [
-  ["name", "Sơn Đặng"],
-  ["age", 18],
-];
-
-function arrToObj(arr) {
-  return arr.reduce((obj, [key, value]) => {
-    obj[key] = value;
-    return obj;
-  }, {});
-}
-console.log(arrToObj(arr)); // { name: 'Sơn Đặng', age: 18 }
-
-/* -----------------------------------
- * 🏅 Bài tập 1: Tính tổng số huy chương vàng
- * ----------------------------------- */
+ * 🧩 BÀI TẬP 1: Tính tổng số huy chương vàng
+ * -----------------------------------
+ * ➜ Input: mảng các môn thể thao
+ * ➜ Output: tổng số huy chương vàng
+ */
 var sports = [
   { name: "Bơi lội", gold: 11 },
   { name: "Boxing", gold: 3 },
@@ -219,13 +201,22 @@ var sports = [
 ];
 
 function getTotalGold(sports) {
-  return sports.reduce((total, sport) => total + sport.gold, 0);
+  // Dùng reduce để cộng dồn số vàng
+  return sports.reduce(function (totalGold, sport) {
+    return (totalGold += sport.gold);
+  }, 0);
 }
-console.log(getTotalGold(sports)); // 23
+
+// ✅ Expected result:
+console.log(getTotalGold(sports)); // 👉 23
 
 /* -----------------------------------
- * 🏆 Bài tập 2: Lọc môn thể thao yêu thích
- * ----------------------------------- */
+ * 🧩 BÀI TẬP 2: Lọc các môn thể thao yêu thích
+ * -----------------------------------
+ * 👉 Viết hàm getMostFavoriteSport(sports)
+ *    - Input: 1 mảng chứa các object { name, like }
+ *    - Output: Mảng mới chỉ chứa những môn có like > 5
+ */
 const sportsLike = [
   { name: "Bóng rổ", like: 6 },
   { name: "Bơi lội", like: 5 },
@@ -233,10 +224,15 @@ const sportsLike = [
 ];
 
 function getMostFavoriteSport(sports) {
-  return sports.filter((sport) => sport.like > 5);
+  // Dùng filter để lọc ra những môn có like > 5
+  return sports.filter(function (sport) {
+    return sport.like > 5;
+  });
 }
-console.log(getMostFavoriteSport(sportsLike));
 
+// ✅ Kỳ vọng
+console.log(getMostFavoriteSport(sportsLike));
+// 👉 [{ name: 'Bóng rổ', like: 6 }, { name: 'Bóng đá', like: 10 }]
 /* --------------------------------------------------------------
  * 📋 TỔNG HỢP CÁC PHƯƠNG THỨC MẢNG TRONG JS
  * --------------------------------------------------------------
