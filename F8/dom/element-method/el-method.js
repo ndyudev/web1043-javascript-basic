@@ -25,3 +25,8 @@ console.log({
 
 // Attribute
 
+// # Video 134: Practice get element method
+
+var productsListElement = document.querySelector("div.products-list");
+var firstProductElement = document.querySelectorAll("div.product")[0];
+var buttonElements = document.getElementsByTagName("button");
