@@ -23,7 +23,7 @@ console.log({
 });
 
 
-// Attribute
+
 
 // # Video 134: Practice get element method
 
